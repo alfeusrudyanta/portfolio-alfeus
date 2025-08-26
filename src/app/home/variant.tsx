@@ -1,5 +1,5 @@
 import { Variants, MotionProps, motion } from 'framer-motion';
-import React, { HTMLAttributes } from 'react';
+import React, { HTMLAttributes, Ref } from 'react';
 
 /* Title Variant */
 const titleVariant: Variants = {
@@ -8,7 +8,9 @@ const titleVariant: Variants = {
 };
 
 type TitleMotionProps = MotionProps &
-  HTMLAttributes<HTMLDivElement> & { children: React.ReactNode };
+  HTMLAttributes<HTMLDivElement> & {
+    children: React.ReactNode;
+  };
 
 export const TitleMotion: React.FC<TitleMotionProps> = ({
   children,
@@ -38,11 +40,16 @@ const contentVariant: Variants = {
 };
 
 type ContentMotionProps = MotionProps &
-  HTMLAttributes<HTMLDivElement> & { children: React.ReactNode; index: number };
+  HTMLAttributes<HTMLDivElement> & {
+    children: React.ReactNode;
+    index: number;
+    ref?: Ref<HTMLDivElement>;
+  };
 
 export const ContentMotion: React.FC<ContentMotionProps> = ({
   children,
   index,
+  ref,
   ...props
 }) => {
   return (
@@ -52,6 +59,7 @@ export const ContentMotion: React.FC<ContentMotionProps> = ({
       initial='hidden'
       whileInView='visible'
       viewport={{ once: true, amount: 0.1 }}
+      ref={ref}
       {...props}
     >
       {children}

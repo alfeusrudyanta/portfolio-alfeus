@@ -1,12 +1,14 @@
 'use client';
 
+import { easeInOut, motion, useAnimation } from 'framer-motion';
 import Image from 'next/image';
-import React from 'react';
+import React, { useEffect } from 'react';
+import { useInView } from 'react-intersection-observer';
 
 import { experienceData } from '@/app/constants/experience-data';
 import { cn } from '@/lib/utils';
 
-import { TitleMotion } from '../variant';
+import { ContentMotion, TitleMotion } from '../variant';
 
 const Experience = () => {
   return (
@@ -75,8 +77,25 @@ const ExperienceCard: React.FC<ExperienceCard> = ({
   year,
   lastIndex,
 }) => {
+  const { ref, inView } = useInView({
+    threshold: 0.1,
+    triggerOnce: true,
+  });
+  const control = useAnimation();
+
+  useEffect(() => {
+    if (inView) {
+      control.start({
+        height: '100%',
+        backgroundColor: '#252b37',
+      });
+    }
+  }, [inView, control]);
+
   return (
-    <TitleMotion
+    <ContentMotion
+      index={id}
+      ref={ref}
       className={cn(
         'relative flex flex-row items-center gap-4 md:gap-16',
         id % 2 === 0 && 'md:flex-row-reverse'
@@ -87,7 +106,12 @@ const ExperienceCard: React.FC<ExperienceCard> = ({
 
       {/* Line */}
       {id < lastIndex && (
-        <div className='absolute top-1/2 left-5 h-[calc(50%+16px)] w-[1px] bg-neutral-800 md:left-1/2 md:h-1/2' />
+        <motion.div
+          initial={{ height: 0, backgroundColor: '#92ff04' }}
+          animate={control}
+          transition={{ duration: 1, ease: easeInOut }}
+          className='absolute top-1/2 left-5 z-10 h-[calc(50%+16px)] w-[1px] bg-neutral-800 md:left-1/2 md:h-1/2'
+        />
       )}
       {!(id === 1) && (
         <div className='absolute top-0 left-5 h-[calc(50%+16px)] w-[1px] bg-neutral-800 md:left-1/2 md:h-1/2' />
@@ -125,6 +149,6 @@ const ExperienceCard: React.FC<ExperienceCard> = ({
           </p>
         </div>
       </div>
-    </TitleMotion>
+    </ContentMotion>
   );
 };
