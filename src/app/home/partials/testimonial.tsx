@@ -14,7 +14,7 @@ import {
 import testimonialData from '@/app/constants/testimonial-data';
 import { cn } from '@/lib/utils';
 
-import { ContentMotion, TitleMotion } from '../variant';
+import { TestimonialMotion, TitleMotion } from '../variant';
 
 const Testimonial = () => {
   const [itemPerPage, setItemPerPage] = useState<number>(3);
@@ -98,11 +98,9 @@ const TestimonialCard: React.FC<TestimonialCard> = ({
   role,
   starNumber,
   className,
-  index,
 }) => {
   return (
-    <ContentMotion
-      index={index}
+    <TestimonialMotion
       className={cn(
         'flex flex-col gap-3 rounded-2xl border border-neutral-800 p-4 md:p-6',
         className
@@ -141,6 +139,6 @@ const TestimonialCard: React.FC<TestimonialCard> = ({
 
       {/* Feedback */}
       <p className='text-md-medium text-neutral-25'>{feedback}</p>
-    </ContentMotion>
+    </TestimonialMotion>
   );
 };

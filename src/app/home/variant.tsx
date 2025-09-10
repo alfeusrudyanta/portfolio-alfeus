@@ -67,6 +67,41 @@ export const ContentMotion: React.FC<ContentMotionProps> = ({
   );
 };
 
+/* TestimonialVariant */
+const testimonialVariant: Variants = {
+  hidden: { opacity: 0, x: -50 },
+  visible: () => ({
+    opacity: 1,
+    x: 0,
+    transition: { duration: 0.4, delay: 0.1, ease: 'easeIn' },
+  }),
+};
+
+type TestimonialMotionProps = MotionProps &
+  HTMLAttributes<HTMLDivElement> & {
+    children: React.ReactNode;
+    ref?: Ref<HTMLDivElement>;
+  };
+
+export const TestimonialMotion: React.FC<TestimonialMotionProps> = ({
+  children,
+  ref,
+  ...props
+}) => {
+  return (
+    <motion.div
+      variants={testimonialVariant}
+      initial='hidden'
+      whileInView='visible'
+      viewport={{ once: true, amount: 0.1 }}
+      ref={ref}
+      {...props}
+    >
+      {children}
+    </motion.div>
+  );
+};
+
 /* Button Container Variant */
 export const buttonContainerVariant: Variants = {
   hidden: {},
