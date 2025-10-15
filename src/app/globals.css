@@ -215,3 +215,7 @@ img {
     @apply max-w-[1440px];
   }
 }
+
+html {
+  scroll-padding-top: 80px;
+}
