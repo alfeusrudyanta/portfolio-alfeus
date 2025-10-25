@@ -46,7 +46,7 @@ type ProficiencyData = {
 export const proficiencyData: ProficiencyData[] = [
   {
     label: 'React JS',
-    percentage: 50,
+    percentage: 85,
   },
   {
     label: 'HTML',
@@ -58,14 +58,14 @@ export const proficiencyData: ProficiencyData[] = [
   },
   {
     label: 'Typescript',
-    percentage: 100,
+    percentage: 85,
   },
   {
-    label: 'Docker',
-    percentage: 70,
+    label: 'CSS',
+    percentage: 90,
   },
   {
     label: 'Javascript',
-    percentage: 90,
+    percentage: 80,
   },
 ];
