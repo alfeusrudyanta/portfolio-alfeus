@@ -68,7 +68,7 @@ const Hero = () => {
           {/* Shadow Layer */}
           <div className='absolute bottom-0 left-0 z-10 h-full w-full bg-[linear-gradient(180deg,rgba(0,0,0,0)_-92.59%,#000000_80%)]' />
           {/* Half green background */}
-          <div className='bg-primary-200/70 absolute bottom-0 left-1/2 h-full w-1/2' />
+          <div className='bg-primary-200 absolute bottom-0 left-1/2 h-full w-1/2' />
           {/* Image */}
           <Image
             alt='/profile-picture.png'
