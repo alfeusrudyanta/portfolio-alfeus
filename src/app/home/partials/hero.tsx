@@ -66,16 +66,16 @@ const Hero = () => {
       <TitleMotion className='md:absolute md:top-0 md:right-0'>
         <div className='relative'>
           {/* Shadow Layer */}
-          <div className='absolute bottom-0 left-0 z-10 h-full w-full bg-[linear-gradient(180deg,rgba(0,0,0,0)_-92.59%,#000000_88.93%)]' />
+          <div className='absolute bottom-0 left-0 z-10 h-full w-full bg-[linear-gradient(180deg,rgba(0,0,0,0)_-92.59%,#000000_80%)]' />
           {/* Half green background */}
-          <div className='bg-primary-200 absolute bottom-0 left-1/2 h-full w-1/2' />
+          <div className='bg-primary-200/70 absolute bottom-0 left-1/2 h-full w-1/2' />
           {/* Image */}
           <Image
             alt='/profile-picture.png'
             src='/image/profile-picture.png'
             width={358}
             height={461}
-            className='relative mx-auto mb-10 pr-3 mix-blend-luminosity grayscale md:mb-0 md:h-[872px] md:w-[658px] md:pr-8'
+            className='relative mx-auto mb-10 pb-20 mix-blend-luminosity grayscale md:mb-0 md:h-[872px] md:w-[658px] md:pr-8 md:pl-10'
           />
           {/* Profile Content */}
           <div className='absolute inset-x-5 -bottom-10 z-20 flex flex-col gap-2 rounded-2xl border border-neutral-800 bg-black p-4 md:bottom-[84px] md:mx-auto md:max-w-[316px]'>

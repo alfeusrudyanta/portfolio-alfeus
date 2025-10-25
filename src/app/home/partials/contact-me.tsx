@@ -95,7 +95,7 @@ const ContactMe = () => {
           alt='profile-picture'
           height={461}
           width={348}
-          className='mx-auto w-[555px] min-w-[348px] mix-blend-luminosity grayscale md:w-[420px]'
+          className='mx-auto w-[555px] min-w-[348px] mix-blend-luminosity grayscale md:w-[420px] md:pb-10'
         />
 
         {/* Shadow overlay */}
