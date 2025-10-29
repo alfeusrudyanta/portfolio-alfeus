@@ -10,10 +10,10 @@ const portfolioData: PortfolioData[] = [
   {
     id: 1,
     image: '/image/portfolio-image-1.png',
-    title: 'Dashboard SaaS Task Management',
+    title: 'Todo List',
     description:
-      'Lorem ipsum dolor sit amet consectetur. Aenean sed commodo aenean nunc lobortis.',
-    link: '',
+      'A to-do list manager that helps users track tasks under three categories — Today, Upcoming, and Completed.',
+    link: 'https://todo-list-zeta-khaki.vercel.app/',
   },
   {
     id: 2,
