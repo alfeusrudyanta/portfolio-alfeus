@@ -7,7 +7,7 @@ const faqData: FaqData[] = [
   {
     question: 'What technologies do you specialize in?',
     answer:
-      'I specialize in React.js, Next.js, Vue.js, Tailwind CSS, and TypeScript, ensuring high-performance, scalable, and maintainable web applications.',
+      'I specialize in React.js, Next.js, Tailwind CSS, and TypeScript, ensuring high-performance, scalable, and maintainable web applications.',
   },
   {
     question: 'Do you work on both design and development?',
